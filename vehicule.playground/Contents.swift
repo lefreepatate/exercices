@@ -1,51 +1,41 @@
-class Vehicule {
-  private  var registrationNumber: Int {
+class Vehicle {
+   var registrationNumber: String {
         get {
             return self.registrationNumber
         }
-        set{
-            self.registrationNumber = newValue
-        }
     }
-    private var year: Int {
+     var year: Int {
         get {
             return self.year
         }
-        set{
-            self.year = newValue
-        }
     }
-    private var price: Int {
+     var price: Int {
         get {
             return self.price
         }
-        set{
-            self.price = newValue
-        }
     }
-    func startVehicule() {
+    func startVehicle() {
     }
     func accelerate(){
     }
-    func toString(){
-        print("This vehicule has the \(registrationNumber) registration number, created in \(year) and costs \(price)$.")
-    }
+    public var description: String {
+     return "This vehicle has the \(registrationNumber) registration number, created in \(year) and costs \(price)$."
 }
-class Car: Vehicule{
-    override func startVehicule(){
+}
+class Car: Vehicle{
+    override func startVehicle(){
         print("Car is starting")
     }
     override func accelerate() {
         print("The car is accelerating")
     }
 }
-class Truck: Vehicule{
-    override func startVehicule(){
+class Truck: Vehicle{
+    override func startVehicle(){
         print("Starting truck")
     }
     override func accelerate() {
-        print("The Trcuck is accelerating")
+        print("The truck is accelerating")
     }
 }
-
 
