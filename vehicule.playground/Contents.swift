@@ -1,23 +1,23 @@
-class Vehicle {
- var registrationNumber: String
+class Vehicle: CustomStringConvertible {
+ var registrationNumber = 0
  var year: Int
  var price: Int
-init(registrationNumber: String) {
-self.registrationNumber = registrationNumber
-}
-init(year: Int){
+ static var numberOfCars = 0
+init(year: Int, price: Int) {
+    Vehicle.numberOfCars += 1
+   registrationNumber = Vehicle.numberOfCars
 self.year = year
-}
-init(price: Int){
 self.price = price
 }
- func startVehicle() {
+
+func startVehicle() {
     }
-    func accelerate(){
+func accelerate(){
     }
     var description: String {
      return "This vehicle has the \(registrationNumber) registration number, created in \(year) and costs \(price)$."
 }
+
 }
 class Car: Vehicle{
     
@@ -35,9 +35,14 @@ class Truck: Vehicle{
     override func accelerate() {
         print("The truck is accelerating")
     }
+    static func beep(){
+        print("beep")
 }
-
-
-var myCar = Car(registrationNumber: "765QFR78", year: 2008, price: 5000)
-myCar.description
-
+}
+var myCar = Car(year: 2008, price: 5000)
+print(myCar)
+var myCar2 = Car(year: 2010, price: 4500)
+print(myCar2)
+var myTruck = Truck(year: 2012, price: 12000)
+myTruck.accelerate()
+Truck.beep()
