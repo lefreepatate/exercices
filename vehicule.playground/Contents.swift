@@ -1,22 +1,22 @@
 class Vehicle: CustomStringConvertible {
- var registrationNumber = 0
- var year: Int
- var price: Int
- static var numberOfCars = 0
-init(year: Int, price: Int) {
-    Vehicle.numberOfCars += 1
-   registrationNumber = Vehicle.numberOfCars
-self.year = year
-self.price = price
-}
+    var registrationNumber = 0
+    var year: Int
+    var price: Int
+    static var numberOfCars = 0
+    init(year: Int, price: Int) {
+        Vehicle.numberOfCars += 1
+        registrationNumber = Vehicle.numberOfCars
+        self.year = year
+    self.price = price
+    }
 
-func startVehicle() {
+    func startVehicle() {
+        }
+    func accelerate(){
+        }
+        var description: String {
+         return "This vehicle has the \(registrationNumber) registration number, created in \(year) and costs \(price)$."
     }
-func accelerate(){
-    }
-    var description: String {
-     return "This vehicle has the \(registrationNumber) registration number, created in \(year) and costs \(price)$."
-}
 
 }
 class Car: Vehicle{
