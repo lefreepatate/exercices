@@ -6,7 +6,7 @@ class Vehicle: CustomStringConvertible {
     init(year: Int, price: Int) {
         Vehicle.numberOfCars += 1
         registrationNumber = Vehicle.numberOfCars
-        self.year = year
+    self.year = year
     self.price = price
     }
 
@@ -14,8 +14,8 @@ class Vehicle: CustomStringConvertible {
         }
     func accelerate(){
         }
-        var description: String {
-         return "This vehicle has the \(registrationNumber) registration number, created in \(year) and costs \(price)$."
+    var description: String {
+        return "This vehicle has the \(registrationNumber) registration number, created in \(year) and costs \(price)$."
     }
 
 }
