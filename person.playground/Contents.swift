@@ -8,41 +8,50 @@ class Person {
         self.dateOfBirth = dateOfBirth
     }
     func personDescription() {
-        print("Name : \(name)\nFirst Name : \(firstName)\n : \(dateOfBirth)")
+        print("\nName : \(name)\nFirst Name : \(firstName)\nDate of Birth : \(dateOfBirth)")
     }
 }
 class Employee: Person {
     var salary:Int
-    init(salary:Int, name:String, firstName:String, dateOfBirth:String){
+    init(name:String, firstName:String, dateOfBirth:String, salary:Int){
         self.salary = salary
         super.init(name:name, firstName:firstName, dateOfBirth:dateOfBirth)
     }
     override func personDescription(){
         super.personDescription()
-        print("\n Salary : \(salary)$")
+        print("Salary : \(salary)   $")
     }
 }
 
 class Boss : Employee{
     var service:String
-    init(service:String, name:String, firstName:String, dateOfBirth:String,salary:Int){
+    init(name:String, firstName:String, dateOfBirth:String,salary:Int, service:String){
         self.service = service
-        super.init(salary:salary, name:name, firstName:firstName, dateOfBirth:dateOfBirth)
+        super.init(name:name, firstName:firstName, dateOfBirth:dateOfBirth, salary:salary)
     }
     override func personDescription(){
         super.personDescription()
-        print("\n Service : \(service)")
+        print("Service : \(service)")
     }
 }
 
 class Director: Boss {
     var company:String
-    init(company:String, service:String, name:String, firstName:String, dateOfBirth:String,salary:Int){
+    init(name:String, firstName:String, dateOfBirth:String,company:String,service:String, salary:Int){
         self.company = company
-        super.init(service:service,name:name,firstName:firstName,dateOfBirth:dateOfBirth,salary:salary)
+        super.init(name:name,firstName:firstName,dateOfBirth:dateOfBirth,salary:salary, service:service)
     }
     override func personDescription(){
         super.personDescription()
-        print("\n Company : \(service)")
+        print("Company : \(company)")
     }
 }
+
+var unePersonne = Person(name:"Garcia", firstName: "Carlos", dateOfBirth:"07/05/1980")
+var unEmployé = Employee(name: "Dupont",  firstName: "Jacques", dateOfBirth: "02 Janvier 1976",salary: 3000)
+var leBoss = Boss( name: "Smith", firstName: "James", dateOfBirth:"13 Juin 1958", salary: 20000, service: "Directeur Commercial")
+var leDirecteur = Director(name: "Cook", firstName: "Tim", dateOfBirth: "1er novembre 1960",company: "Apple", service: "Director", salary: 8500000)
+unePersonne.personDescription()
+unEmployé.personDescription()
+leBoss.personDescription()
+leDirecteur.personDescription()
