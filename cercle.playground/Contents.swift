@@ -14,13 +14,21 @@ class Point {
     var description:String{
         return "Cercle(\(x), \(y), \(x + y))"
     }
+    var point:String{
+        if x == x && y == y {
+        return "\n\nDonner un point\n\nX :\(x)\n\nY : \(y)\n\nPOINT(\(x),\(y))\n\nLe point appartient au cercle"
+        }else {
+            return "Le point n'appartient pas au cercle"
+            }
+    }
     var radius:String {
         return "Donner le rayon : \(x + y)"
     }
+    let π = 3.1415
     var perimeter: Double {
         return 2 * π * (x + y)
     }
-    let π = 3.1415
+
     var getPerimeter:String {
         get {
             return "Le perimètre est :\(perimeter)"
@@ -43,3 +51,5 @@ print(unCercle.radius)
 print(unCercle.description)
 print(unCercle.getPerimeter)
 print(unCercle.areaCircle)
+var unAutreCercle = Point(x:2,y:3)
+print(unAutreCercle.point)
