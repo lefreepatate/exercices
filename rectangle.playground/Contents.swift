@@ -1,4 +1,4 @@
-class Rectangle {
+class Rectangle: CustomStringConvertible {
     var length: Int
     var width: Int
     init(width:Int, length:Int){
@@ -36,4 +36,5 @@ print(rectangle1.description)
 print(rectangle1.isSquare)
 var rectangle2 = Rectangle(width:5, length:5)
 print(rectangle2.description)
+print(rectangle2.isSquare)
 print(rectangle2.showRectangle)
