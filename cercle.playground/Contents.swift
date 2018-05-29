@@ -17,7 +17,6 @@ class Point: CustomStringConvertible {
     var radius:String {
         return "Donner le rayon : \(x + y)"
     }
-    let π = 3.141592653589793
     var point:String{
         if x <= (x + y) && y <= (x + y) {
             return "\n\nDonner un point\n\nX :\(x)\n\nY : \(y)\n\nPOINT(\(x),\(y))\n\nLe point appartient au cercle"
@@ -29,7 +28,7 @@ class Point: CustomStringConvertible {
 }
 class Circle: Point{
     var perimeter: Double {
-        return 2 * π * (x + y)
+        return 2 * Double.pi * (x + y)
     }
     
     var getPerimeter:String {
@@ -42,7 +41,7 @@ class Circle: Point{
     }
     var areaCircle : String{
         get {
-            return "La surface est :\(squared * π)"
+            return "La surface est :\(squared * Double.pi)"
         }
     }
 }
