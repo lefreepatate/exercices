@@ -56,11 +56,22 @@ let table: [Person] = [
         Boss(name:"Boss2", firstName:"Eliot", dateOfBirth:"19 juin 1983",salary:5400, service:"Directeur Marketing"),
         Director(name:"Cook", firstName:"Tim", dateOfBirth: "1er novembre 1960",company: "Apple", service: "Director", salary: 8500000)
 ]
-var unePersonne = Person(name:"Garcia", firstName: "Carlos", dateOfBirth:"07/05/1980")
+/* var unePersonne = Person(name:"Garcia", firstName: "Carlos", dateOfBirth:"07/05/1980")
 var unEmployé = Employee(name: "Dupont",  firstName: "Jacques", dateOfBirth: "02 Janvier 1976",salary: 3000)
 var leBoss = Boss( name: "Smith", firstName: "James", dateOfBirth:"13 Juin 1958", salary: 20000, service: "Directeur Commercial")
 var leDirecteur = Director(name: "Cook", firstName: "Tim", dateOfBirth: "1er novembre 1960",company: "Apple", service: "Director", salary: 8500000)
 unePersonne.description()
 unEmployé.description()
 leBoss.description()
-leDirecteur.description()
+leDirecteur.description()*/
+print("\n------------ AFFICHAGE À L'AIDE DE 'FOR' ------------\n")
+for Person in table {
+    print(Person.description())
+}
+print("\n------------ AFFICHAGE À L'AIDE DE 'FOR EACH' + ESSAI REVERSED ------------\n")
+
+table.reversed().forEach { Person in
+    print (Person.description())
+}
+
+
